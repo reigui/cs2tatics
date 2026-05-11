@@ -1,0 +1,212 @@
+/* CSS GERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* HOTBAR */
+.hotbar {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 10px 0;
+    width: 100%;
+}
+
+.hotbar_list {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    list-style-type: none;
+}
+
+
+/* HEADER */
+.cabecalho {
+    display:grid;
+    grid-template-columns: auto auto auto;
+    background-color: #333;
+    color: #ffffff;
+    padding: 20px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.pesquisa {
+    width: 600px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pesquisa input {
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border: 1px solid #000;
+    border-radius: 20px;
+}
+
+.botoes {
+    width: 200px;
+    margin-left: 40px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.button {
+    padding: 10px 20px;
+    background-color: #555;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.container{
+    background-color: #6E686D;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.card_principal {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    color: white;
+    width: 80%; 
+    margin: 20px auto; 
+    border: 1px solid #000;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.redesocial {
+    list-style-type: none;
+    width: 20%;
+    padding-left: 50px;
+}
+
+.redesocial a {
+    list-style-type: none;
+    text-decoration: none;
+    color:white;
+}
+
+/* GRID PRINCIPAL */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background-color: #f7f7f7;
+    color: #000000;
+    padding: 20px;
+    margin: 0 auto;
+    width: 80%;
+    height: 90%;
+    justify-items: center; /* horizontal */
+    align-items: center;   /* vertical */
+    border-radius: 20px;
+}
+
+.card {
+    display: grid;
+    grid-template-rows: 15% 70% 15%;
+    color: rgb(255, 255, 255);
+    width: 350px;
+    height: 400px;   
+    padding: 20px;
+    margin-top: 10px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    justify-items: center; /* horizontal */
+}
+.card h2 {
+    align-items: center;
+    align-self: start;
+    margin: 0;
+    color: burlywood;
+}
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* importante pra imagem não deformar */
+}
+.card p {
+    align-self: end;
+    text-align: center;
+    color: black;
+}
+
+
+/* GRID EXTRA MAPAS */
+.grid_extra {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    width: 70%;
+    background-color: #f7f7f7;
+    color: #000000;
+    padding: 10px;
+    margin: 20px auto;
+    justify-items: center;
+    align-items: center; 
+    border-radius: 20px;
+}
+
+.grid_extra h2{
+    color: black;
+}
+.grid_extra p {
+    color: black;
+}  
+
+.card_extra {
+    width: 100%;
+    height: 70px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+
+/* GRID GUIAS */
+.grid_guias {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* ajusta como quiser */
+    gap: 20px;
+    background-color: #f7f7f7;
+    color: #000000;
+    padding: 30px;
+    row-gap: 30px;
+    margin: 20px auto;
+    height: 80%;
+    width: 80%;
+    justify-items: center; 
+    align-items: center;   
+    border-radius: 20px;
+    border: 1px solid #000
+}
+
+.grid_cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* ajusta como quiser */
+    background-color: #f7f7f7;
+    color: #000000;
+    margin: 0 auto;
+    height: 300px;
+    width: 100%;
+    justify-items: center; 
+    align-items: center;   
+    border-radius: 20px;
+    border: 1px solid #000
+}
+.titulo {
+    grid-column: 1 / -1; /* faz o título ocupar toda a linha */
+    text-align: center;  /* opcional */
+    margin-bottom: 10px;
+}

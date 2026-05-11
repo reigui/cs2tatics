@@ -1,0 +1,167 @@
+/* src/paginas/setores/setor.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.pagina-setor {
+  min-height: 100vh;
+  background: #7a7377;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* NAVBAR */
+
+.navbar {
+  height: 70px;
+  background: #2c252a;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 40px;
+}
+
+.logo h1 {
+  font-size: 2rem;
+}
+
+.pesquisa input {
+  width: 400px;
+  height: 40px;
+
+  border-radius: 20px;
+  border: none;
+
+  padding: 0 20px;
+}
+
+.auth {
+  display: flex;
+  gap: 10px;
+}
+
+.auth button {
+  background: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* CONTEÚDO */
+
+.conteudo {
+  display: flex;
+  gap: 20px;
+
+  padding: 20px;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+  width: 230px;
+  min-height: 700px;
+
+  background: #e8e8e8;
+  color: black;
+
+  border-radius: 12px;
+
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.filtro {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.filtro h3 {
+  font-size: 0.9rem;
+}
+
+.filtro input {
+  height: 35px;
+
+  border-radius: 20px;
+  border: 1px solid #555;
+
+  padding: 0 15px;
+}
+
+.filtro button {
+  height: 40px;
+
+  border-radius: 10px;
+  border: 1px solid #555;
+
+  cursor: pointer;
+
+  background: white;
+}
+
+.btn-mapa {
+  height: 45px;
+
+  border-radius: 20px;
+  border: 1px solid #555;
+
+  cursor: pointer;
+}
+
+/* ÁREA PRINCIPAL */
+
+.area-principal {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 30px;
+}
+
+.voltar {
+  width: 120px;
+  height: 40px;
+
+  background: transparent;
+  border: none;
+
+  color: white;
+
+  cursor: pointer;
+
+  font-size: 1rem;
+}
+
+.area-principal h1 {
+  margin-bottom: 20px;
+}
+
+/* CARDS */
+
+.grid-cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 300px;
+  height: 220px;
+
+  background: #d9d9d9;
+
+  border-radius: 15px;
+
+  border: 1px solid #555;
+}

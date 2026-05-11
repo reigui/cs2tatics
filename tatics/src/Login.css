@@ -1,0 +1,138 @@
+/* CONTAINER */
+.container_login {
+  display: flex;
+  height: 100vh;
+  background-color: #6f6a6c;
+  color: #fff;
+}
+
+/* ESQUERDA */
+.container_login .left_login {
+  width: 40%;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #cfcfcf;
+}
+
+/* TÍTULO */
+.container_login .Titulo {
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+/* FORM */
+.container_login .Formulario {
+  display: flex;
+  flex-direction: column;
+}
+
+.container_login .Formulario input {
+  height: 35px;
+  border: none;
+  background: #d9d9d9;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+/* LABEL (AGORA BATENDO COM JSX) */
+.container_login .FormLabel {
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+/* BOTÕES */
+.container_login .btn_criar_conta {
+  margin-top: 15px;
+  height: 38px;
+  border: none;
+  background: #d9d9d9;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.container_login .btn_entrar {
+  margin-top: 10px;
+  height: 38px;
+  border: none;
+  background: #d9d9d9;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* DIVIDER */
+.container_login .divider {
+  text-align: center;
+  margin: 20px 0;
+  position: relative;
+}
+
+.container_login .divider span {
+  background: #6f6a6c;
+  padding: 0 10px;
+  font-size: 12px;
+}
+
+.container_login .divider::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background: #cfcfcf;
+  top: 50%;
+  left: 0;
+  z-index: -1;
+}
+
+/* SOCIAL */
+.container_login .social {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+}
+
+.container_login .social a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* MAIN (IMPORTANTE - AGORA ELE PARTICIPA DO FLEX) */
+.container_login main {
+  width: 60%;
+  display: flex;
+}
+
+/* DIREITA */
+.container_login .right_login {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 50px;
+}
+
+/* TÍTULO */
+.container_login .right_login h1 {
+  font-size: 42px;
+}
+
+.container_login .right_login span {
+  color: orange;
+}
+
+/* TEXTO */
+.container_login .right_login p {
+  font-size: 12px;
+  margin: 10px 0 30px;
+}
+
+/* IMAGEM */
+.container_login .image-box img {
+  width: 80%;
+  max-width: 450px;
+}

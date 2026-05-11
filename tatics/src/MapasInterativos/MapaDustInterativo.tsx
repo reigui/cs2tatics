@@ -1,0 +1,117 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
+
+const MapaDustInterativo = () => {
+  const [setorAtivo, setSetorAtivo] = useState("Passe o mouse ou clique");
+
+  const setores = [
+    {
+      id: "bombsite-b", nome: "BOMB B", pontos:"55,9,151,11,149,111,283,113,345,148,349,412,339,407,339,469,270,540,251,580,204,582,202,514,138,514,141,644,85,644,85,514,38,512,40,412,30,412,30,324,40,322,38,277,55,275",
+    },
+    {
+      id: "bombsite-a", nome: "BOMB A", pontos:"922,152,922,177,935,179,935,235,922,238,922,406,930,406,930,423,1020,423,1154,421,1154,438,1280,439,1280,518,1275,518,1273,610,1282,607,1282,720,1416,722,1416,661,1419,658,1419,564,1442,517,1462,517,1462,498,1491,500,1484,333,1425,332,1424,156,1416,156,1416,43,1199,43,1199,154,1068,151,987,151,953,151,937,152,937,152,937,152,937,152",
+    },
+    {
+      id: "escuro-cima-baixo", nome: "ESCURO - CIMA/BAIXO", pontos:"632,598,632,684,461,687,464,731,454,760,428,786,397,791,275,793,271,813,251,813,200,813,152,815,152,790,34,794,34,647,232,647,232,695,385,691,383,601",
+    },
+    {
+      id: "meio-varanda", nome: "MEIO - VARANDA", pontos:"875,984,875,1080,852,1058,715,1058,692,1080,692,1095,581,1095,558,971,596,971,596,896,643,896,643,847,630,847,630,749,645,749,643,575,720,575,720,602,779,602,779,579,860,579,858,600,916,600,916,462,928,464,928,423,1022,423,1022,681,809,683,788,703,788,965,809,984",
+    },
+    {
+      id: "base-tr-b", nome: "BASE - TR B", pontos:"202,816,253,816,253,904,328,906,326,938,360,938,362,972,383,1104,383,1153,347,1153,326,1174,326,1227,349,1253,413,1251,411,1217,488,1217,488,1391,645,1391,645,1553,460,1549,460,1560,175,1560,175,1547,19,1547,19,1396,72,1342,72,1200,85,1200,85,1121,79,1121,81,938,132,936,132,904,202,904,202,861",
+    },
+    {
+      id: "base-tr-corredor-morte", nome: "BASE TR - CORREDOR DA MORTE", pontos:"643,1098,694,1098,694,1227,701,1227,701,1298,722,1321,809,1321,809,1334,839,1334,864,1308,862,1249,875,1251,875,985,1007,985,1007,1068,1111,1066,1111,1200,1118,1317,1026,1317,1026,1304,973,1304,973,1389,1001,1389,1001,1534,903,1534,903,1592,711,1594,711,1553,645,1553",
+    },
+    {
+      id: "fundo-a", nome: "FUNDO A", pontos:"1009,735,1097,718,1414,720,1414,780,1484,786,1484,1057,1412,1059,1410,1106,1290,1108,1286,1093,1171,1093,1171,936,1169,897,1154,884,1092,882,1094,895,1111,895,1111,1053,1018,1053,1018,895,1033,895,1031,878,1009,878",
+    },
+    {
+      id: "base-ct-rampa b", nome: "BASE CT - RAMPA B", pontos:"360,173,360,412,379,412,379,424,460,424,460,412,513,409,513,424,562,424,562,412,613,409,613,567,641,567,643,576,718,576,718,542,741,539,741,510,718,510,715,444,830,446,867,422,918,424,918,230,845,230,847,294,818,324,718,322,718,224,449,224,449,173",
+    },
+
+];
+
+    return (
+      <>
+      {/* CABEÇALHO */}
+      <div className="cabecalho">
+        <h1>CS2TATICS</h1>
+
+        <div className="pesquisa">
+          <input type="text" placeholder="Pesquise o Mapa ou Utilitária" />
+        </div>
+
+        <div className="botoes">
+          <button className="button">
+            <Link to="/login">Entrar</Link>
+          </button>
+          <button className="button">
+            <Link to="/register">Registrar</Link>
+          </button>
+        </div>
+      </div>
+ 
+    {/* MAPA */}
+      <div
+        style={{
+          position: "relative",
+          width: "900px",
+          maxWidth: "100%",
+          margin: "20px auto",
+          backgroundColor: "#111",
+          borderRadius: "8px",
+        }}
+      >
+        <h2 style={{ color: "white", textAlign: "center" }}>
+          Setor: {setorAtivo}
+        </h2>
+
+        <img
+          src="/img_mapas/dust2.png"
+          alt="Dust2"
+          style={{ width: "100%" }}
+        />
+
+        <svg
+          viewBox="0 0 1390 1200"
+          preserveAspectRatio="none"
+          style={{
+            position: "absolute",
+            top: 30,
+            left: 0,
+            width: "100%",
+          }}
+        >
+          {setores.map((s) => (
+            <polygon
+              key={s.id}
+              points={s.pontos}
+              fill="transparent"
+              stroke="white"
+              strokeWidth="1"
+              style={{ cursor: "pointer", transition: "0.2s" }}
+              onMouseEnter={() => setSetorAtivo(s.nome)}
+              onMouseLeave={() =>
+                setSetorAtivo("Passe o mouse ou clique")
+              }
+              onClick={() => alert(`Ação no setor: ${s.nome}`)}
+              className="setor-hover"
+            />
+          ))}
+        </svg>
+
+        <style>{`
+          .setor-hover:hover {
+            fill: rgba(255, 251, 2, 0.2);
+            stroke: yellow;
+            stroke-width: 3px;
+          }
+        `}</style>
+      </div>
+    </>
+);
+
+};
+
+export default MapaDustInterativo;
