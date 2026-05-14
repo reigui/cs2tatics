@@ -78,97 +78,90 @@ const MapaMirageInterativo = () => {
 
   return (
     <>
-      <div className="cabecalho">
-        <h1>CS2TATICS</h1>
-
-        <div className="pesquisa">
-          <input
-            type="text"
-            placeholder="Pesquise o Mapa ou Utilitária"
-          />
-        </div>
-
-        <div className="botoes">
-          <button className="button">
-            <Link to="/login">Entrar</Link>
-          </button>
-
-          <button className="button">
-            <Link to="/register">Registrar</Link>
-          </button>
-        </div>
-      </div>
 
       <div
         style={{
-          position: "relative",
-          width: "900px",
-          maxWidth: "100%",
-          margin: "20px auto",
+          display: "flex",
+          justifyContent: "center",
+          padding: "20px 0",
           backgroundColor: "#111",
-          borderRadius: "8px",
-          overflow: "hidden",
         }}
       >
-        <h2
+        <div
           style={{
-            color: "white",
-            textAlign: "center",
-            padding: "10px",
+            position: "relative",
+            width: "100%",
+            maxWidth: "1200px",
+            margin: "0 auto",
+            backgroundColor: "#111",
+            borderRadius: "0",
+            overflow: "hidden",
           }}
         >
-          Setor: {setorAtivo}
-        </h2>
+          <h2
+            style={{
+              color: "white",
+              textAlign: "center",
+              padding: "10px",
+            }}
+          >
+            Setor: {setorAtivo}
+          </h2>
 
-        <img
-          src="/img_mapas/mirage_1920x1080.png"
-          alt="Mirage"
-          style={{
-            width: "100%",
-            display: "block",
-            userSelect: "none",
-          }}
-        />
-
-        <svg
-          viewBox= "0 0 1920 1080"
-          preserveAspectRatio="xMidYMid meet"
-          style={{
-            position: "absolute",
-            inset: 0,
-            width: "100%",
-            height: "100%",
-            top: 20,
-            left: 6,
-          }}
-        >
-          {setores.map((s) => (
-            <polygon
-              key={s.id}
-              points={(s.pontos)}
-              fill="rgba(255,255,0,0.05)"
-              stroke="rgba(255,255,255,0.7)"
-              strokeWidth="1.5"
-              vectorEffect="non-scaling-stroke"
+          <div style={{ position: "relative", width: "100%", height: "100%", aspectRatio: 16 / 9 }}>
+            <img
+              src="/img_mapas/mirage_1920x1080.png"
+              alt="Mirage"
               style={{
-                cursor: "pointer",
-                transition: "all 0.2s ease",
+                width: "100%",
+                height: "auto",
+                objectFit: "contain",
+                objectPosition: "center",
+                display: "block",
+                userSelect: "none",
               }}
-              onMouseEnter={() => setSetorAtivo(s.nome)}
-              onMouseLeave={() =>
-                setSetorAtivo("Passe o mouse ou clique")
-              }
-              onClick={() => navigate(`/mapa/mirage/${s.id}`)}
-              className="setor-hover"
             />
-          ))}
-        </svg>
+
+          <svg
+            viewBox="0 0 1920 1080"
+            preserveAspectRatio="xMidYMid meet"
+            style={{
+              position: "absolute",
+              inset: 0,
+              width: "100%",
+              height: "100%",
+            }}
+          >
+
+
+          {setores.map((s) => (
+              <polygon
+                key={s.id}
+                points={s.pontos}
+                fill="rgba(255,255,0,0.05)"
+                stroke="rgba(255,255,255,0.7)"
+                strokeWidth="1.5"
+                vectorEffect="non-scaling-stroke"
+                style={{
+                  cursor: "pointer",
+                  transition: "all 0.2s ease",
+                }}
+                onMouseEnter={() => setSetorAtivo(s.nome)}
+                onMouseLeave={() =>
+                  setSetorAtivo("Passe o mouse ou clique")
+                }
+                onClick={() => navigate(`/setores/PaginaSetor/${s.id}`)}
+                className="setor-hover"
+              />
+            ))}
+          </svg>
+          </div>
+        </div>
 
         <style>{`
           .setor-hover:hover {
             fill: rgba(255, 255, 0, 0.25);
             stroke: #ffee00;
-            stroke-width: 3;
             filter: drop-shadow(0 0 5px #ffee00);
           }
 

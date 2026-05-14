@@ -27,24 +27,7 @@ const MapaNukeInterativo = () => {
 ];
 
     return (
-        <>
-             {/* CABEÇALHO */}
-      <div className="cabecalho">
-        <h1>CS2TATICS</h1>
-
-        <div className="pesquisa">
-          <input type="text" placeholder="Pesquise o Mapa ou Utilitária" />
-        </div>
-
-        <div className="botoes">
-          <button className="button">
-            <Link to="/login">Entrar</Link>
-          </button>
-          <button className="button">
-            <Link to="/register">Registrar</Link>
-          </button>
-        </div>
-      </div>
+    <>
  
     {/* MAPA */}
       <div
@@ -62,7 +45,7 @@ const MapaNukeInterativo = () => {
         </h2>
 
         <img
-          src="/img_mapas/nuke.png"
+          src="/img_mapas/nuke_1920x1080.png"
           alt="Nuke"
           style={{ width: "100%" }}
         />

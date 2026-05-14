@@ -27,25 +27,7 @@ const MapaCacheInterativo = () => {
 ];
 
     return (
-        <>
-             {/* CABEÇALHO */}
-      <div className="cabecalho">
-        <h1>CS2TATICS</h1>
-
-        <div className="pesquisa">
-          <input type="text" placeholder="Pesquise o Mapa ou Utilitária" />
-        </div>
-
-        <div className="botoes">
-          <button className="button">
-            <Link to="/login">Entrar</Link>
-          </button>
-          <button className="button">
-            <Link to="/register">Registrar</Link>
-          </button>
-        </div>
-      </div>
- 
+    <>
     {/* MAPA */}
       <div
         style={{
@@ -62,7 +44,7 @@ const MapaCacheInterativo = () => {
         </h2>
 
         <img
-          src="/img_mapas/cache.png"
+          src="/img_mapas/cache_1920x1080.png"
           alt="Cache"
           style={{ width: "100%" }}
         />

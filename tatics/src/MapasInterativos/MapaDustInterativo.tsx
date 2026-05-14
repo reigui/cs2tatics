@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const MapaDustInterativo = () => {
   const [setorAtivo, setSetorAtivo] = useState("Passe o mouse ou clique");
+  const navigate = useNavigate();
 
   const setores = [
     {
@@ -34,24 +35,6 @@ const MapaDustInterativo = () => {
 
     return (
       <>
-      {/* CABEÇALHO */}
-      <div className="cabecalho">
-        <h1>CS2TATICS</h1>
-
-        <div className="pesquisa">
-          <input type="text" placeholder="Pesquise o Mapa ou Utilitária" />
-        </div>
-
-        <div className="botoes">
-          <button className="button">
-            <Link to="/login">Entrar</Link>
-          </button>
-          <button className="button">
-            <Link to="/register">Registrar</Link>
-          </button>
-        </div>
-      </div>
- 
     {/* MAPA */}
       <div
         style={{
@@ -68,7 +51,7 @@ const MapaDustInterativo = () => {
         </h2>
 
         <img
-          src="/img_mapas/dust2.png"
+          src="/img_mapas/dust2_1920x1080.png"
           alt="Dust2"
           style={{ width: "100%" }}
         />
@@ -95,7 +78,7 @@ const MapaDustInterativo = () => {
               onMouseLeave={() =>
                 setSetorAtivo("Passe o mouse ou clique")
               }
-              onClick={() => alert(`Ação no setor: ${s.nome}`)}
+             onClick={() => navigate(`/setores/PaginaSetor/${s.id}`)}
               className="setor-hover"
             />
           ))}

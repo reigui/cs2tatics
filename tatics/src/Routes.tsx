@@ -2,27 +2,30 @@ import {BrowserRouter,Routes,Route,} from "react-router-dom";
 import Login from "./Login";
 import Register from "./Register";
 import Home from "./Home";
-import MapaMirageInterativo from "./MapasInterativos/MapaMirageInterativo";
+import MapaDetalhe from "./MapaDetalhe";
 import PaginaSetor from "./setores/PaginaSetor";
+import Layout from "./Layout";
 
 
 const AppRoutes = () => {
   return (
     <BrowserRouter>
-      <Routes>
-        
-        <Route path="/" element={<Home />} />
-        
-        <Route path="/login" element={<Login />}/>
+      <Layout>
+        <Routes>
+          
+          <Route path="/" element={<Home />} />
+          
+          <Route path="/login" element={<Login />}/>
 
-        <Route path="/register"element={<Register />}/>
+          <Route path="/register"element={<Register />}/>
 
-        <Route path="/mapa/mirage"element={<MapaMirageInterativo />}/>
+          <Route path="/mapa/:nome" element={<MapaDetalhe />} />
 
-        <Route path="/mapa/mirage/:setor"element={<PaginaSetor />}/>
+          <Route path="/setores/PaginaSetor/:setorId" element={<PaginaSetor />} />
 
 
-      </Routes>
+        </Routes>
+      </Layout>
     </BrowserRouter>
   );
 };

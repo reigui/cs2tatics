@@ -27,25 +27,8 @@ const MapaTrainInterativo = () => {
 ];
 
     return (
-        <>
-             {/* CABEÇALHO */}
-      <div className="cabecalho">
-        <h1>CS2TATICS</h1>
+    <>
 
-        <div className="pesquisa">
-          <input type="text" placeholder="Pesquise o Mapa ou Utilitária" />
-        </div>
-
-        <div className="botoes">
-          <button className="button">
-            <Link to="/login">Entrar</Link>
-          </button>
-          <button className="button">
-            <Link to="/register">Registrar</Link>
-          </button>
-        </div>
-      </div>
- 
     {/* MAPA */}
       <div
         style={{
@@ -62,7 +45,7 @@ const MapaTrainInterativo = () => {
         </h2>
 
         <img
-          src="/img_mapas/train.png"
+          src="/img_mapas/train_1920x1080.png"
           alt="Train"
           style={{ width: "100%" }}
         />
